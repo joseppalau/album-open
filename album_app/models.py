@@ -7,6 +7,9 @@ class Album(models.Model):
     client = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.title
+
 
 class Image(models.Model):
     album = models.ForeignKey('album_app.Album', on_delete=models.CASCADE, related_name='images')
@@ -17,7 +20,7 @@ class Image(models.Model):
     date_created = models.DateField(default=timezone.now)
 
     def __str__(self):
-        self.title
+        return self.title
 
     class Meta:
         ordering = ['-date_created']
