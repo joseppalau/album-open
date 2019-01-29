@@ -4,7 +4,7 @@ from .models import Image
 def image_list(request):
     query = Image.objects.all()
     content = {'images': query}
-    return render(request, 'album_app/images_list.html', content)
+    return render(request, 'album_app/photo_list.html', content)
 
 
 
