@@ -13,11 +13,15 @@
 </head>
 <body>
 <div class = 'container'>
-    {% for image in images %}
-        <div class="container-img">
+    <div class = container-header>
+        <p>Selecciona les imatges que més t'agradin per l'album</p>
+    </div>
+    <div class="container-img">
+        {% for image in images %}
         <img src="{{ image.image.url }}"alt="" width="300px">
-        </div>
-    {% endfor%}
+        {% endfor%}
+    </div>
+
 </div>
 
 </body>
