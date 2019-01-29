@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="008bd852-0c98-4a85-b81a-809ec28c842c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/album_app/static/styles/inici.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/album_app/templates/album_app/inici.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/album_app/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/album_app/static/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/album_app/static/styles/images_list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/album_app/templates/album_app/photo_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/album_app/templates/album_app/photo_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/album_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/album_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/montlleo_album/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/montlleo_album/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/montlleo_album/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/montlleo_album/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/album_app/static/styles/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/album_app/static/styles/inici.css" beforeDir="false" afterPath="$PROJECT_DIR$/album_app/static/styles/inici.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/album_app/templates/album_app/inici.html" beforeDir="false" afterPath="$PROJECT_DIR$/album_app/templates/album_app/inici.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/album_app/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/album_app/templates/registration/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.44002566">
+    <splitter split-orientation="horizontal" split-proportion="0.466966">
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="false">
@@ -35,22 +29,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/album_app/templates/registration/login.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="416">
-                  <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file:///anaconda3/envs/mysite/lib/python3.7/site-packages/django/contrib/auth/urls.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <folding>
-                    <element signature="e#249#286#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="260">
+                  <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
                 </state>
               </provider>
             </entry>
@@ -96,14 +79,23 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/album_app/templates/album_app/inici.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="520">
-                  <caret line="20" column="69" lean-forward="true" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
+                  <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
                   <folding>
                     <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/album_app/static/styles/login.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="130">
+                  <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -133,11 +125,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/album_app/templates/album_app/inici.html">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/album_app/templates/registration/login.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="461">
-                  <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
+                <state relative-caret-position="305">
+                  <caret line="12" selection-start-line="12" selection-end-line="12" />
                   <folding>
                     <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
@@ -146,10 +138,15 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/album_app/static/images/logo-montlleo.png">
+              <provider selected="true" editor-type-id="images" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/album_app/static/styles/inici.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+                <state relative-caret-position="130">
+                  <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -181,15 +178,16 @@
         <option value="$PROJECT_DIR$/album_app/views.py" />
         <option value="$PROJECT_DIR$/album_app/static/styles/styles.css" />
         <option value="$PROJECT_DIR$/album_app/templates/album_app/photo_list.html" />
-        <option value="$PROJECT_DIR$/album_app/static/styles/inici.css" />
         <option value="$PROJECT_DIR$/album_app/urls.py" />
-        <option value="$PROJECT_DIR$/album_app/templates/album_app/inici.html" />
         <option value="$PROJECT_DIR$/album_app/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/album_app/static/styles/login.css" />
+        <option value="$PROJECT_DIR$/album_app/templates/album_app/inici.html" />
+        <option value="$PROJECT_DIR$/album_app/static/styles/inici.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="27" />
+    <option name="x" value="59" />
     <option name="y" value="23" />
     <option name="width" value="1855" />
     <option name="height" value="989" />
@@ -224,6 +222,13 @@
               <item name="jordi-montlleo" type="462c0819:PsiDirectoryNode" />
               <item name="album_app" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jordi-montlleo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jordi-montlleo" type="462c0819:PsiDirectoryNode" />
+              <item name="album_app" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -238,6 +243,13 @@
               <item name="album_app" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="album_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jordi-montlleo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jordi-montlleo" type="462c0819:PsiDirectoryNode" />
+              <item name="album_app" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jordi-montlleo" type="b2602c69:ProjectViewProjectNode" />
@@ -326,12 +338,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="27" y="23" width="1855" height="989" extended-state="0" />
+    <frame x="59" y="23" width="1855" height="989" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8927536" visible="true" weight="0.14994547" />
-      <window_info id="Structure" order="1" sideWeight="0.10724638" side_tool="true" visible="true" weight="0.14994547" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.9405797" visible="true" weight="0.14994547" />
+      <window_info id="Structure" order="1" sideWeight="0.05942029" side_tool="true" visible="true" weight="0.14994547" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info anchor="bottom" id="Terminal" visible="true" weight="0.21052632" />
@@ -421,29 +433,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/album_app/static/styles/inici.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/album_app/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/album_app/templates/album_app/inici.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="20" column="69" lean-forward="true" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -477,8 +472,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/album_app/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state relative-caret-position="305">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/album_app/static/images/logo-montlleo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/album_app/static/styles/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/album_app/templates/album_app/inici.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/album_app/static/styles/inici.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
         </state>
       </provider>
     </entry>

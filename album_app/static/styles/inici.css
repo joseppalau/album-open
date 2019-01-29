@@ -1,11 +1,10 @@
-
-
 .header-one{
     display: flex;
     align-items:center;
     justify-content:center;
     color:white;
-    font-size:50px
+    font-size:50px;
+    margin-top:100px;
 }
 
 .header-two{
@@ -14,7 +13,5 @@
     justify-content:center;
     flex-direction:column;
     color:white;
-    header-two
     font-size:30px
-
 }

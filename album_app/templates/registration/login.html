@@ -1,13 +1,20 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
 </head>
-<body>
-    <div>
+    <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<body style="background:black;">
+    <div class="login-container">
         <h2>Accedeix a les teves fotografies</h2>
-        <form method="post">
+        <form class="login-form" method="post">
             {% csrf_token %}
             {{form.as_p}}
             <button type="'submit" class="btn btn-primary">Accedeix</button>
