@@ -1,28 +1,25 @@
 {% load staticfiles %}
 
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fotografíes</title>
-    <link rel="stylesheet" href="{% static 'styles/images_list.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/inici.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Inici</title>
 </head>
-<body>
-<div class = 'container'>
-    <div class = container-header>
-        <p>Selecciona les imatges que més t'agradin per l'album</p>
-    </div>
-    <div class="container-img">
-        {% for image in images %}
-        <img src="{{ image.image.url }}"alt="" width="300px">
-        {% endfor%}
-    </div>
 
-</div>
-
+<body style="background-color:black;">
+    <div class="header-one">
+        <p>Benvingut a l'àlbum dels teus records</p>
+    </div>
+    <div class="header-two">
+        <p>Entra a l'estudi</p>
+        <a class="btn btn-primary" href="accounts/login/">Comença</a>
+    </div>
 </body>
+
 </html>

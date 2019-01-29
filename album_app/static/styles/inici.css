@@ -1,0 +1,20 @@
+
+
+.header-one{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:50px
+}
+
+.header-two{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    color:white;
+    header-two
+    font-size:30px
+
+}

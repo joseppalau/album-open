@@ -25,6 +25,9 @@ SECRET_KEY = '%q)78(7ysgc5m^g1vknch&g%$qstg8o*hq$29=yhha+(ihi=*='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+LOGIN_REDIRECT_URL = 'image_list'
+LOGOUT_REDIRECT_URL = 'inici'
+
 ALLOWED_HOSTS = []
 
 
