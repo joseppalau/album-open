@@ -1,12 +1,10 @@
 {% load staticfiles %}
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Fotografíes</title>
-    <link rel="stylesheet" href="{% static 'styles/images_list.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/photo_list.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -18,11 +16,12 @@
     </div>
     <div class="container-img">
         {% for image in images %}
-        <img src="{{ image.image.url }}"alt="" width="300px">
+        <img id='{{image.id}}' src="{{ image.image.url }}" alt="" width="300px" onclick=selectImg(this)>
         {% endfor%}
     </div>
-
 </div>
+
+<script src="{% static 'javascript/photo_list.js' %}"></script>
 
 </body>
 </html>
