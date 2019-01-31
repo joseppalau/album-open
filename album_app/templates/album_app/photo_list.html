@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Fotografíes</title>
     <link rel="stylesheet" href="{% static 'styles/photo_list.css' %}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -16,12 +18,14 @@
     </div>
     <div class="container-img">
         {% for image in images %}
-        <img id='{{image.id}}' src="{{ image.image.url }}" alt="" width="300px" onclick=selectImg(this)>
-        {% endfor%}
+        <img id='{{image.id}}' src="{{ image.photo.url }}" alt="" onclick="selectImg(this)">
+        {% endfor %}
     </div>
 </div>
 
-<script src="{% static 'javascript/photo_list.js' %}"></script>
-
+<div class="bigImage">
+    <img id='img-big' src="/media/IMG_2374_shfr16A.JPG" alt="">
+</div>
+    <script src="{% static 'javascript/photo_list.js' %}"></script>
 </body>
 </html>
