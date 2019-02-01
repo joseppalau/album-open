@@ -18,13 +18,26 @@
     </div>
     <div class="container-img">
         {% for image in images %}
-        <img id='{{image.id}}' src="{{ image.photo.url }}" alt="" onclick="selectImg(this)">
+        <a href="{% url 'photo_main_big' pk=image.pk %}"><img id='{{image.id}}' src="{{ image.photo.url }}" alt=""></a>
         {% endfor %}
     </div>
 </div>
 
 <div class="bigImage">
-    <img id='img-big' src="/media/IMG_2374_shfr16A.JPG" alt="">
+    {% if image_big %}
+        <img id={{image_big.id}} src="{{image_big.photo.url}}" alt="">
+    {% endif %}
+
+    <div class="status-bigImage">
+        {% if image_big.selected %}
+        <p>Foto <strong>Si</strong> seleccionada</p>
+        <a class="btn btn-primary" style="background:red; width:150px; font-size:18px;" href="{% url 'add_delete_photo' pk=image_big.pk %}">Treu-la</a>
+        {% else %}
+        <p>Foto <strong>No</strong> seleccionada</p>
+        <a class="btn btn-primary" style="background:green; width:150px; font-size:18px" href="{% url 'add_delete_photo' pk=image_big.pk %}">Afegeix-la</a>
+        {% endif %}
+    </div>
+
 </div>
     <script src="{% static 'javascript/photo_list.js' %}"></script>
 </body>

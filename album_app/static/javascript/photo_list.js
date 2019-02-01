@@ -1,5 +1,5 @@
 // image selecting
-function selectImg(img){
+/*function selectImg(img){
    img_border = img.style.border;
    if(img_border == '5px solid grey'){
         img.style.border = null;
@@ -8,6 +8,6 @@ function selectImg(img){
    }
    document.getElementById('img-big').src = img.src;
 
-}
+}*/
 
 

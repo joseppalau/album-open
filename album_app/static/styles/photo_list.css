@@ -45,4 +45,16 @@ height:100px;
 .status-bigImage{
     display:flex;
     justify-content:center;
+    align-items:center;
+    margin-top:15px;
+    margin-bottom:30px;
+}
+
+.status-bigImage p{
+    margin-right:15px;
+    color:grey;
+    font-size: 20px
+}
+.status-bigImage a{
+    margin-left:15px;
 }
