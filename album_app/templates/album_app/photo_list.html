@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body context = "{{num_selected}}" context2 ="{{album.max_photos}}">
 
 <div class="top-container">
     <div class="top-container-left">
@@ -26,7 +26,7 @@
             <a style="color:white;"  href="">Album</a>
         </div>
         <div>
-            Hola, {{username}}
+            Hola, {{album.client.username}}
         </div>
     </div>
 </div>
@@ -63,12 +63,13 @@
     <div class="col-2">
         <div class="container-barra">
             <h3>Estat de l'album</h3>
-            <progress value="{{num_selected}}" max="{{album.max_photo}}" class="barraStyle"></progress>
+            <canvas id="album-bar" width="200px" height="25px"></canvas>
+            <p>{{num_selected}} fotos de {{album.max_photos}}</p>
+            <input type="hidden" id="num_selected" name="variable" value="{{num_selected}}">
+            <input type="hidden" id="max_photos" name="variable2" value="{{album.max_photos}}">
         </div>
     </div>
 </div>
-
-
-    <script src="{% static 'javascript/photo_list.js' %}"></script>
+<script src="{% static 'javascript/photo_list.js' %}"></script>
 </body>
 </html>
