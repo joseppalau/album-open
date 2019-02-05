@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Fotografíes</title>
     <link rel="stylesheet" href="{% static 'styles/photo_list.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -12,33 +13,62 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class = 'container'>
-    <div class = container-header>
-        <p>Selecciona les imatges que més t'agradin per l'album</p>
+
+<div class="top-container">
+    <div class="top-container-left">
+      <img src="{% static 'images/logo-montlleo.jpg' %}" alt="" width="300px;" height="auto" >
     </div>
-    <div class="container-img">
-        {% for image in images %}
-        <a href="{% url 'photo_main_big' pk=image.pk %}"><img id='{{image.id}}' src="{{ image.photo.url }}" alt=""></a>
-        {% endfor %}
+    <div class="top-container-right">
+        <div>
+            <a style="color:white;"  href="">Surt</a>
+        </div>
+        <div>
+            <a style="color:white;"  href="">Album</a>
+        </div>
+        <div>
+            Hola, {{username}}
+        </div>
     </div>
 </div>
 
-<div class="bigImage">
-    {% if image_big %}
-        <img id={{image_big.id}} src="{{image_big.photo.url}}" alt="">
-    {% endif %}
+<div class="main-div">
+    <div class="col-1">
+        <div class = 'container1'>
+            <div class = container1-header>
+                <p>Selecciona les imatges que més t'agradin per l'album</p>
+            </div>
+            <div class="container1-img">
+                {% for image in images %}
+                <a href="{% url 'photo_main_big' pk=image.pk %}"><img id='{{image.id}}' src="{{ image.photo.url }}" alt=""></a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="bigImage">
+            <div class="status-bigImage">
+                {% if image_big.selected %}
+                <p>Foto <strong>Si</strong> seleccionada</p>
+                <a class="btn btn-primary" style="background:red; width:150px; font-size:18px;" href="{% url 'add_delete_photo' pk=image_big.pk %}">Treu-la</a>
+                {% else %}
+                <p>Foto <strong>No</strong> seleccionada</p>
+                <a class="btn btn-primary" style="background:green; width:150px; font-size:18px" href="{% url 'add_delete_photo' pk=image_big.pk %}">Afegeix-la</a>
+                {% endif %}
+            </div>
+            {% if image_big %}
+                <img id={{image_big.id}} src="{{image_big.photo.url}}" alt="">
+            {% endif %}
 
-    <div class="status-bigImage">
-        {% if image_big.selected %}
-        <p>Foto <strong>Si</strong> seleccionada</p>
-        <a class="btn btn-primary" style="background:red; width:150px; font-size:18px;" href="{% url 'add_delete_photo' pk=image_big.pk %}">Treu-la</a>
-        {% else %}
-        <p>Foto <strong>No</strong> seleccionada</p>
-        <a class="btn btn-primary" style="background:green; width:150px; font-size:18px" href="{% url 'add_delete_photo' pk=image_big.pk %}">Afegeix-la</a>
-        {% endif %}
+        </div>
     </div>
 
+    <div class="col-2">
+        <div class="container-barra">
+            <h3>Estat de l'album</h3>
+            <progress value="{{num_selected}}" max="{{album.max_photo}}" class="barraStyle"></progress>
+        </div>
+    </div>
 </div>
+
+
     <script src="{% static 'javascript/photo_list.js' %}"></script>
 </body>
 </html>
