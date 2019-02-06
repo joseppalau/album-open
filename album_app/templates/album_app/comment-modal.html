@@ -1,0 +1,22 @@
+<div class="modal-fade" id="modal-comment">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-label">Afegir Comentari</h3>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>X</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'create_comment' %}" method="post">
+                    {% csrf_token %}
+                    <div class="comment-form">
+                         <label for="textComment">Comentari</label>
+                        <input type="text" class="form-control" id="textComment" placeholder="Afageix els teus comentaris" >
+                    </div>
+                    <button class="btn btn-primary" type="submit">Afageix</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
