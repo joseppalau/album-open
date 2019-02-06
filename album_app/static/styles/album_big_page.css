@@ -1,3 +1,12 @@
+html, body{
+    height:100%;
+    margin=0;
+}
+
+.screen{
+    height:100%;
+}
+
 .top-container{
     background:black;
     height:50px;
@@ -39,106 +48,17 @@
     border-left: 1px solid white;
 }
 
-.main-div{
+.main-container{
     display:flex;
-    flex-direction:row;
-}
-
-.col-1{
-    width:75%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:space-around;
-    margin-top:25px;
-    margin-bottom:25px;
-}
-
-.col-2{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    width:25%;
-    background-color:#f2f2f2;
-    align-items:center;
-    padding:25px;
-}
-
-.container1{
-display:flex;
-flex-direction:column;
-justify-content:center;
-width:100%;
-margin-bottom:25px;
-}
-
-.container1-header{
-    display: flex;
-    align-items:center;
-    justify-content:center;
-    background-color:white;
-    color:black;
-    font-size:25px;
-}
-
-.container1-img{
-display:flex;
-justify-content: center;
-flex-wrap: wrap;
-border: 1px solid black;
-width:75%;
-margin: 0 auto;
-}
-
-.container1-img img{
-margin-top:5px;
-margin-bottom:5px;
-margin-right:5px;
-width:auto;
-height:100px;
-}
-
-.bigImage{
-    width:100%
-}
-
-.bigImage img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-}
-
-.status-bigImage{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-top:15px;
-    margin-bottom:30px;
-}
-
-.status-bigImage p{
-    margin-right:15px;
-    color:grey;
-    font-size: 20px
-}
-.status-bigImage a{
-    margin-left:15px;
-}
-
-.container-barra{
-    display:flex;
+    margin: 0 auto;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    width:75%
-    margin-top:20px;
-    margin-bottom:20px;
+    width:70%;
+    margin: 0 auto;
 }
 
-#album-bar{
-    border: 1px solid black;
-}
+
 
 /* Position the image container (needed to position the left and right arrows) */
 .container-gallery {

@@ -1,0 +1,69 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fotografíes</title>
+    <link rel="stylesheet" href="{% static 'styles/album_big_page.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="screen">
+    <div class="top-container">
+        <div class="top-container-left">
+            <div>
+            Jordi Montlleó Fotògrafs
+            </div>
+            <div>
+                Tel: 933 977 031 / Mòb: 605 866 170
+            </div>
+        </div>
+        <div class="top-container-right">
+            <div>
+                <a style="color:white;"  href="">Surt</a>
+            </div>
+            <div>
+                <a style="color:white;"  href="{% url 'album_big_page' %}">Album</a>
+            </div>
+            <div>
+                <a style="color:white;" href="{% url 'photo_list' %}">Fotografies</a>
+            </div>
+            <div>
+                Hola, {{album.client.username}}
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+         <div id="carousel" class="container-gallery">
+             {% for image in images_selected %}
+             <div class="mySlides">
+                 <img src="{{image.photo.url}}" style="width:100%">
+             </div>
+             {% endfor %}
+             <!-- Next and previous buttons -->
+             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+             <a class="next" onclick="plusSlides(1)">&#10095;</a>
+         </div>
+    </div>
+
+    <div class="bottom">
+        <div>
+            Jordi Montlleó Fotògras
+        </div>
+        <div>
+             933 977 031 / 605 866 170
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'javascript/album_big_page.js' %}"></script>
+</body>
+</html>
