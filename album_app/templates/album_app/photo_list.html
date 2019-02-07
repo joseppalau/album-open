@@ -72,18 +72,31 @@
                         <div>
                             <form class="comment-form" action="{% url 'add_comment' pk=image_big.pk %}" method="post">
                                 {% csrf_token %}
-                                <div class="comment-form">
-                                    <input type="text" class="form-control" id="textComment" placeholder="Afageix els teus comentaris", name="comentari" >
+                                <div class="comment-form-content">
+                                    <div class="comment-form-images">
+                                        {% for avatar in album.client.avatars.all %}
+                                        <div style="width:50px; margin-bottom:10px; margin-right:10px;">
+                                        <img src="{{avatar.photo.url}}" alt="" width="50px" height="50px" >
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    <input style="display:block" type="text" class="form-control" id="textComment" placeholder="Afageix els teus comentaris", name="comentari" >
                                 </div>
                                 <button class="btn btn-primary" type="submit">Afageix</button>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div>
-                    {% for comment in image_big.comments.all %}
-                        <p>{{comment.text}}</p>
-                    {% endfor %}
+                <div class="comments">
+                    <h3>Comentaris</h3>
+                    <div class="comments-list">
+                        {% for comment in image_big.comments.all %}
+                            <div class="comments-list-content">
+                                <span style="float:right;color:grey;">{{comment.date}}</span>
+                                <p style="witdh:80%;">{{comment.text}}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             {% endif %}
         </div>
