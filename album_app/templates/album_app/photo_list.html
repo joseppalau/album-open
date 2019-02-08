@@ -74,15 +74,19 @@
                                 {% csrf_token %}
                                 <div class="comment-form-content">
                                     <div class="comment-form-images">
+                                        <div style="display:flex; align-items:center; width:100px;">
+                                            Qui escriu?
+                                        </div>
                                         {% for avatar in album.client.avatars.all %}
                                         <div style="width:50px; margin-bottom:10px; margin-right:10px;">
-                                        <img src="{{avatar.photo.url}}" alt="" width="50px" height="50px" >
+                                            <img class="avatar-class" id="{{avatar.id}}"src="{{avatar.photo.url}}" alt="" width="50px" height="50px" onclick="choose_avatar(this)">
                                         </div>
                                         {% endfor %}
+                                        <input id="avatarInput" type="hidden" name="avatar">
                                     </div>
                                     <input style="display:block" type="text" class="form-control" id="textComment" placeholder="Afageix els teus comentaris", name="comentari" >
                                 </div>
-                                <button class="btn btn-primary" type="submit">Afageix</button>
+                                <button class="btn btn-primary" type="submit" onclick="reset_avatars">Afageix</button>
                             </form>
                         </div>
                     </div>
@@ -92,8 +96,13 @@
                     <div class="comments-list">
                         {% for comment in image_big.comments.all %}
                             <div class="comments-list-content">
-                                <span style="float:right;color:grey;">{{comment.date}}</span>
-                                <p style="witdh:80%;">{{comment.text}}</p>
+                                <div style="width:10%">
+                                    <img style="display:block;float:left;border-radius:50%" src="{{comment.avatar.photo.url}}" alt="">
+                                </div>
+                                <div style="width:90%">
+                                    <span style="float:right;color:grey; font-size:10px;">{{comment.date}}</span>
+                                    <p style="width:80%; font-size:15px;">{{comment.text}}</p>
+                                </div>
                             </div>
                         {% endfor %}
                     </div>
@@ -102,6 +111,18 @@
         </div>
     </div>
     <div class="col-2">
+        <div class="protagonistes">
+            <h3>Els protagonistes</h3>
+            <div class="protagonistes-images">
+                {% for avatar in album.avatars.all %}
+                    <div style="text-align:center;">
+                        <img src="{{avatar.photo.url}}" alt="">
+                        <p>{{avatar.name}}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        
         <div class="container-barra">
             <h3>Estat de l'album</h3>
             <canvas id="album-bar" width="200px" height="25px"></canvas>

@@ -33,6 +33,31 @@ window.onclick = function(event) {
   }
 }
 
+
+//Avatars
+
+function choose_avatar(avatar_img){
+    avatar_img.style.border = '1px solid green';
+    avatar = document.getElementById("avatarInput");
+    avatar.value = avatar_img.id;
+
+    avatars = document.getElementsByClassName('avatar-class');
+    for (i=0; i < avatars.length; i++){
+        avatars[i].style.opacity = 0.5;
+    }
+
+    avatar_img.style.opacity = 1;
+}
+
+function reset_avatars(){
+    avatars = document.getElementsByClassName('avatar-class');
+    for (i=0; i < avatars.length; i++){
+        avatars[i].style.opacity = 0.5;
+    }
+
+}
+
+
 //Image gallery
 var slideIndex = 1;
 showSlides(slideIndex);

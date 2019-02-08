@@ -100,6 +100,10 @@ width:auto;
 height:100px;
 }
 
+.container1-img img:hover{
+    border: 2px solid white;
+}
+
 .bigImage{
     width:100%
 }
@@ -147,7 +151,8 @@ margin:0 auto;
 }
 
 .comments-list-content{
-
+    display:flex;
+    margin-bottom:10px;
 }
 
 
@@ -289,3 +294,27 @@ margin:0 auto;
 .comment-form input{
     margin-bottom:15px;
 }
+
+/* Protagonistes DIV - Col right */
+
+.protagonistes{
+    width:100%;
+    text-align:center;
+}
+
+.protagonistes-images{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    flex-wrap:wrap;
+}
+
+.protagonistes-images img{
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+    max-width:75px;
+    border-radius:50%;
+}
+
+
