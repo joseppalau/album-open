@@ -1,0 +1,19 @@
+.header-one{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:50px;
+    margin-top:100px;
+}
+
+.header-two{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    color:white;
+    font-size:30px
+    color:brown;
+}
+

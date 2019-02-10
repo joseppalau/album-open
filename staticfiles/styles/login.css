@@ -1,0 +1,30 @@
+.login-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    margin-top:25px;
+}
+
+.login-container h2{
+    color:white;
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.login-form{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.login-form label{
+    color:white;
+    width:100px;
+}
+
+.login-form button{
+    margin-top:25px;
+}
+

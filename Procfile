@@ -1,0 +1,1 @@
+web: gunicorn montlleo_album.wsgi --log-file -

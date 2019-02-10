@@ -1,0 +1,320 @@
+/* Main body */
+
+.top-container{
+    background:black;
+    height:50px;
+    display:flex;
+}
+
+.top-container-left{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    width:50%;
+    color:white;
+    padding-left:25px;
+    font-size:15px;
+}
+
+.top-container-left div{
+    padding-right:10px;
+    padding-left:10px;
+    border-right: 1px solid white;
+}
+
+.top-container-right{
+    display:flex;
+    flex-direction:row-reverse;
+    align-items:center;
+    width:50%;
+    margin-right:50px;
+}
+
+.top-container-right div{
+    display:flex;
+    align-items:center;
+    height:30px;
+    color:white;
+    padding-left:10px;
+    padding-right:10px;
+    font-size:15px;
+    border-left: 1px solid white;
+}
+
+.main-div{
+    display:flex;
+    flex-direction:row;
+}
+
+.col-1{
+    width:75%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:space-around;
+    margin-top:25px;
+    margin-bottom:25px;
+}
+
+.col-2{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:25%;
+    background-color:#f2f2f2;
+    align-items:center;
+    padding:25px;
+}
+
+.container1{
+display:flex;
+flex-direction:column;
+justify-content:center;
+width:100%;
+margin-bottom:25px;
+}
+
+.container1-header{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    background-color:white;
+    color:black;
+    font-size:25px;
+}
+
+.container1-img{
+display:flex;
+justify-content: center;
+flex-wrap: wrap;
+border: 1px solid black;
+width:75%;
+margin: 0 auto;
+}
+
+.container1-img img{
+margin-top:5px;
+margin-bottom:5px;
+margin-right:5px;
+width:auto;
+height:100px;
+}
+
+.container1-img img:hover{
+    border: 2px solid white;
+}
+
+.bigImage{
+    width:100%
+}
+
+.bigImage img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+
+}
+
+.status-bigImage{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:15px;
+    margin-bottom:30px;
+}
+
+.status-bigImage p{
+    margin-right:15px;
+    color:grey;
+    font-size: 20px
+}
+.status-bigImage a{
+    margin-left:15px;
+}
+
+.comments{
+width:60%;
+margin:0 auto;
+}
+
+.comments h3{
+    background-color:#f2f2f2;
+    padding:5px;
+}
+
+.comments-list{
+    display:flex;
+    flex-direction:column;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.comments-list-content{
+    display:flex;
+    margin-bottom:10px;
+}
+
+
+.container-barra{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:75%
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+#album-bar{
+    border: 1px solid black;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container-gallery {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.bottom{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    color: white;
+    background-color:black;
+    justify-content:center;
+    height:50px;
+}
+
+.bottom div{
+    padding-right:10px;
+    padding-left:10px;
+    border-right: 1px solid white;
+}
+
+
+/* Modal css*/
+
+.modal-comment {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.comment-form-content{
+    display:flex;
+    flex-direction:column;
+    margin-top:10px;
+}
+
+.comment-form-images{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+}
+
+.comment-form-images img{
+    width: 50px;
+    height:50px;
+}
+
+.comment-form input{
+    margin-bottom:15px;
+}
+
+/* Protagonistes DIV - Col right */
+
+.protagonistes{
+    width:100%;
+    text-align:center;
+}
+
+.protagonistes-images{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    flex-wrap:wrap;
+}
+
+.protagonistes-images img{
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+    max-width:75px;
+    border-radius:50%;
+}
+
+
