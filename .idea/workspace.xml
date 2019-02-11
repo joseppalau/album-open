@@ -1,57 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce6d294b-01c9-4cba-8ead-cbba0f80db80" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile.windows" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/album_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/album_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/590ce4b1-c02c-4919-bc46-4e2cdc6e9410.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_1182.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_1323.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_1337.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_1391.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_1550.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_1973.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2022.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2063.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2127.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2149.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2171.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2177.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2223.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2269.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2280.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2295.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2295_eRraTUg.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2319.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2350.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2356.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2369.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2374.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2374_shfr16A.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2380.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2387.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2388.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2398.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2401.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2404.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/IMG_2409.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/fullsizeoutput_406.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/fullsizeoutput_557.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/fullsizeoutput_574.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/fullsizeoutput_580.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/fullsizeoutput_583.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/fullsizeoutput_583_JworLvd.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/fullsizeoutput_591.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/mariela&amp;josep.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/perfil-josep.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/perfil-mariela.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediafiles/perfil-marti.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/montlleo_album/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/montlleo_album/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="ce6d294b-01c9-4cba-8ead-cbba0f80db80" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +12,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.47977686">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="26">
@@ -134,10 +84,10 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/album_app/templates/album_app/photo_list.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="295">
+                <state relative-caret-position="333">
                   <caret line="81" column="74" selection-start-line="81" selection-start-column="74" selection-end-line="81" selection-end-column="74" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -168,10 +118,10 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/album_app/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="261">
+                <state relative-caret-position="316">
                   <caret line="59" column="53" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
                   <folding>
                     <element signature="e#0#64#0" expanded="true" />
@@ -192,7 +142,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/album_app/static/javascript/photo_list.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="454">
@@ -237,37 +187,6 @@
             <path>
               <item name="jordi-montlleo" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="jordi-montlleo" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="album_app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="jordi-montlleo" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="album_app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="jordi-montlleo" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="album_app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="static" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="javascript" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="jordi-montlleo" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="album_app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="jordi-montlleo" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="album_app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="album_app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -331,9 +250,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="23" width="1920" height="989" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.59726965" visible="true" weight="0.1195366" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.59726965" visible="true" weight="0.19747235" />
       <window_info id="Structure" order="1" sideWeight="0.40273038" side_tool="true" weight="0.24486572" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -344,7 +262,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32178771" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32951945" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49815693" visible="true" weight="0.3340961" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49815693" visible="true" weight="0.395881" />
       <window_info anchor="bottom" id="Python Console" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -560,13 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/montlleo_album/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -584,25 +495,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/album_app/templates/album_app/photo_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="81" column="74" selection-start-line="81" selection-start-column="74" selection-end-line="81" selection-end-column="74" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/album_app/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="42" column="22" lean-forward="true" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/album_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="59" column="53" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -614,13 +522,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/album_app/views.py">
+    <entry file="file://$PROJECT_DIR$/album_app/templates/album_app/photo_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="59" column="53" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
+        <state relative-caret-position="333">
+          <caret line="81" column="74" selection-start-line="81" selection-start-column="74" selection-end-line="81" selection-end-column="74" />
           <folding>
-            <element signature="e#0#64#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
