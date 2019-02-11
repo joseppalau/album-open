@@ -57,11 +57,8 @@ def add_comment(request, pk):
 
     if request.method == 'POST':
         avatar_id = request.POST.get('avatar')
-        avatar = Avatar.objects.get(id=avatar_id)
+        avatar = Avatar.objects.get(id=int(avatar_id))
         comment = Comment.objects.create(image=image, avatar=avatar, text=request.POST.get('comentari'), date=timezone.now())
-        """comment.image = image
-        comment.text = request.POST.get('comentari')
-        comment.date = timezone.now()"""
         comment.save()
     return redirect('photo_main_big', pk=pk)
 
