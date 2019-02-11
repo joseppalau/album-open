@@ -35,7 +35,6 @@ window.onclick = function(event) {
 
 
 //Avatars
-
 function choose_avatar(avatar_img){
     avatar_img.style.border = '1px solid green';
     avatar = document.getElementById("avatarInput");
@@ -45,7 +44,6 @@ function choose_avatar(avatar_img){
     for (i=0; i < avatars.length; i++){
         avatars[i].style.opacity = 0.5;
     }
-
     avatar_img.style.opacity = 1;
 }
 
