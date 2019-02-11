@@ -32,16 +32,17 @@ def photo_main_big(request, pk):
 
 def add_delete_photo(request, pk):
     image = get_object_or_404(Image, pk=pk)
+    album = get_object_or_404(Album, client=request.user)
+
     if image.selected:
         image.selected = False
     else:
         image.selected = True
+
     image.save()
 
-    if get_object_or_404(Image, pk=image.pk+1):
-        num = image.pk + 1
-    else:
-        num = 1
+    num = album.images.all()[0].pk
+
     return redirect('photo_main_big', pk=num)
 
 
