@@ -60,8 +60,9 @@
             </div>
             {% if image_big %}
                 <img id={{image_big.id}} src="{{image_big.photo.url}}" alt="">
-                <div class="btn-comment", style="display:flex; justify-content:center; margin-top:25px;">
-                    <button class="btn btn-primary" id="btn-model-comment">Afegeix comentari</button>
+                <div class="bigImage-btns">
+                    <button class="btn btn-primary" style="margin-right:15px;" id="btn-modal-comment">Afegeix comentari</button>
+                    <button class="btn btn-primary" style="background:orange; margin-left:15px;" id="btn-modal-value">Evalua foto</button>
                 </div>
                 <div class="modal-comment" id="modalComment">
                     <div class="modal-content">
@@ -84,17 +85,38 @@
                                         {% endfor %}
                                         <input id="avatarInput" type="hidden" name="avatar">
                                     </div>
-                                    <input style="display:block" type="text" class="form-control" id="textComment" placeholder="Afageix els teus comentaris", name="comentari" >
+                                    <input style="display:block" type="text" class="form-control" id="textComment" placeholder="selecciona protagonista i després escriu comentari", name="comentari" >
                                 </div>
-                                <button class="btn btn-primary" type="submit" onclick="reset_avatars">Afageix</button>
+                                <button id="btn-comment" class="btn btn-primary" style="opacity:0.5;" type="submit" onclick="reset_avatars" disabled="true">Afageix</button>
                             </form>
                         </div>
                     </div>
                 </div>
+
+                <div class="modal-value" id="modal-value">
+                    <div class="modal-value-content">
+                        <div class="modal-value-title">
+                            <span id="close-value" class="close">&times;</span>
+                            <h3 id="modal-value-title">Valora Foto</h3>
+                        </div>
+                        <div class="modal-value-input">
+                            <button id="magica" value="magic" class="btn-values" style="background:green">Màgica</button>
+                            <button id="moltBona" value="veryGood" class="btn-values" style="background:orange">Molt bona</button>
+                            <button id="bona" value="good" class="btn-values" style="background:grey">Bona</button>
+                            <button id="noMagrada" value="noLike" class="btn-values" style="background:red">No m'agrada</button>
+                        </div>
+                        <form class="modal-value-form" action="">
+                            {% csrf_token %}
+                            <input id="valueInput" type="hidden" name="value-chosen">
+                            <button class="btn btn-primary" style="width:50px;display:block;float:right;" id="okValue" type="submit" disabled="true">OK</button>
+                        </form>
+                    </div>
+                </div>
+
                 <div class="comments">
                     <h3>Comentaris</h3>
                     <div class="comments-list">
-                        {% for comment in image_big.comments.all %}
+                        {% for comment in comments %}
                             <div class="comments-list-content">
                                 <div style="width:10%">
                                     <img style="display:block;float:left;border-radius:50%" src="{{comment.avatar.photo.url}}" alt="">

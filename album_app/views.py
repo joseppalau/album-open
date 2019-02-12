@@ -25,8 +25,9 @@ def photo_main_big(request, pk):
     all_images = album.images.all()
     images_selected = album.images.filter(selected=True)
     num_selected = len(images_selected)
+    comments = image.comments.order_by('-date')
     context = {'album': album, 'images': all_images, 'image_big': image,
-               'num_selected': num_selected, 'images_selected': images_selected}
+               'num_selected': num_selected, 'images_selected': images_selected, 'comments': comments}
     return render(request, 'album_app/photo_list.html', context)
 
 
@@ -60,9 +61,6 @@ def add_comment(request, pk):
         avatar_id = request.POST.get('avatar')
         avatar = Avatar.objects.get(id=avatar_id)
         comment = Comment.objects.create(image=image, avatar=avatar, text=request.POST.get('comentari'), date=timezone.now())
-        """comment.image = image
-        comment.text = request.POST.get('comentari')
-        comment.date = timezone.now()"""
         comment.save()
     return redirect('photo_main_big', pk=pk)
 

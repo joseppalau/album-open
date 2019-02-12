@@ -52,3 +52,12 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class Value(models.Model):
+    grade = models.CharField(max_length=100)
+    image = models.ForeignKey(Image, on_delete=models.CASCADE, related_name='grades')
+    avatar = models.ForeignKey(Avatar, on_delete=models.CASCADE, related_name='grades')
+
+    def __str__(self):
+        return self.grade
