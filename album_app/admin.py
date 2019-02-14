@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Image, Album, Avatar, Comment
+from .models import Image, Album, Avatar, Comment, Value
 
 # Register your models here.
 class AlbumAdmin(admin.ModelAdmin):
@@ -30,8 +30,16 @@ class CommentAdmin(admin.ModelAdmin):
         model = Comment
 
 
+class ValueAdmin(admin.ModelAdmin):
+    list_display = ['grade', 'image', 'avatar']
+
+    class Meta:
+        model = Value
+
+
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Image, ImageAdmin)
 admin.site.register(Avatar, AvatarAdmin)
 admin.site.register(Comment, CommentAdmin)
+admin.site.register(Value, ValueAdmin)
 

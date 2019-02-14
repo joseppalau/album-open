@@ -6,7 +6,7 @@
     <title>Fotografíes</title>
     <link rel="stylesheet" href="{% static 'styles/photo_list.css' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 
@@ -37,6 +37,7 @@
 </div>
 
 <div class="main-div">
+    <!--COLUMN 1 (LEFT)-->
     <div class="col-1">
         <div class = 'container1'>
             <div class = container1-header>
@@ -48,6 +49,7 @@
                 {% endfor %}
             </div>
         </div>
+        <!--BIG IMAGE-->
         <div class="bigImage">
             <div class="status-bigImage">
                 {% if image_big.selected %}
@@ -64,6 +66,7 @@
                     <button class="btn btn-primary" style="margin-right:15px;" id="btn-modal-comment">Afegeix comentari</button>
                     <button class="btn btn-primary" style="background:orange; margin-left:15px;" id="btn-modal-value">Evalua foto</button>
                 </div>
+                <!--MODAL COMMENT-->
                 <div class="modal-comment" id="modalComment">
                     <div class="modal-content">
                         <div class="modal-title">
@@ -92,12 +95,22 @@
                         </div>
                     </div>
                 </div>
-
+                <!--MODAL VALUE FOR BIG IMAGE -->
                 <div class="modal-value" id="modal-value">
                     <div class="modal-value-content">
                         <div class="modal-value-title">
                             <span id="close-value" class="close">&times;</span>
                             <h3 id="modal-value-title">Valora Foto</h3>
+                        </div>
+                        <div class="value-form-images">
+                            <div style="text_align:center; width:100px;">
+                                Qui avalua?
+                            </div>
+                            {% for avatar in album.avatars.all %}
+                            <div style="width:50px; margin-bottom:10px; margin-right:10px;">
+                                <img style="border-radius:50%;"class="avatar-class" id="{{avatar.id}}"src="{{avatar.photo.url}}" alt="" width="50px" height="50px" onclick="choose_avatar(this)">
+                            </div>
+                            {% endfor %}
                         </div>
                         <div class="modal-value-input">
                             <button id="magica" value="magic" class="btn-values" style="background:green">Màgica</button>
@@ -105,14 +118,16 @@
                             <button id="bona" value="good" class="btn-values" style="background:grey">Bona</button>
                             <button id="noMagrada" value="noLike" class="btn-values" style="background:red">No m'agrada</button>
                         </div>
-                        <form class="modal-value-form" action="">
+                        <form id="value-form" method ='POST' class="modal-value-form" action="/photo_list/add_photo_value/">
                             {% csrf_token %}
                             <input id="valueInput" type="hidden" name="value-chosen">
-                            <button class="btn btn-primary" style="width:50px;display:block;float:right;" id="okValue" type="submit" disabled="true">OK</button>
+                            <input id="bigImageValueId" type="hidden" value="{{image_big.id}}" name="bigImageValueName" >
+                            <input id="avatarInput_value" type="hidden" name="avatar_value">
+                            <button id="okValue" class="btn btn-primary" style="width:50px;display:block;float:right;" type="submit" value='Submit' disabled="true">OK</button>
                         </form>
                     </div>
                 </div>
-
+                <!-- COMMENTS BELOW BIG IMAGE -->
                 <div class="comments">
                     <h3>Comentaris</h3>
                     <div class="comments-list">
@@ -132,6 +147,8 @@
             {% endif %}
         </div>
     </div>
+
+    <!-- COLUMN 2 (RIGHT) -->
     <div class="col-2">
         <div class="protagonistes">
             <h3>Els protagonistes</h3>
@@ -152,6 +169,7 @@
             <input type="hidden" id="num_selected" name="variable" value="{{num_selected}}">
             <input type="hidden" id="max_photos" name="variable2" value="{{album.max_photos}}">
         </div>
+        <!-- imagegallery-->
         <div id="carousel" class="container-gallery">
             {% for image in images_selected %}
                 <div class="mySlides">
@@ -162,6 +180,7 @@
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
+
         <div>
             <a class="btn btn-primary " style="margin-top:15px;" href="{% url 'album_big_page' %}">Amplia</a>
         </div>
@@ -179,6 +198,8 @@
 </div>
 
 <script src="{% static 'javascript/photo_list.js' %}"></script>
+
+
 </body>
 </html>
 
