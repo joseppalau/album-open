@@ -18,19 +18,21 @@ def image_list(request):
     images_selected = album.images.filter(selected=True)
     num_selected = len(images_selected)
     image_big = all_images[0]
-    context = {'images': all_images, 'image_big': image_big, 'album': album, 'num_selected': num_selected, 'images_selected': images_selected,}
+    values = Value.objects.filter(image=image_big)
+    context = {'images': all_images, 'image_big': image_big, 'album': album, 'num_selected': num_selected, 'images_selected': images_selected, 'values': values}
     return render(request, 'album_app/photo_list.html', context)
 
 
 def photo_main_big(request, pk):
     image = get_object_or_404(Image, pk=pk)
+    values = Value.objects.filter(image=image)
     album = get_object_or_404(Album, client=request.user)
     all_images = album.images.all()
     images_selected = album.images.filter(selected=True)
     num_selected = len(images_selected)
     comments = image.comments.order_by('-date')
     context = {'album': album, 'images': all_images, 'image_big': image,
-               'num_selected': num_selected, 'images_selected': images_selected, 'comments': comments}
+               'num_selected': num_selected, 'images_selected': images_selected, 'comments': comments, 'values': values}
     return render(request, 'album_app/photo_list.html', context)
 
 
@@ -75,7 +77,8 @@ def add_photo_value(request):
             avatar = Avatar.objects.get(id=avatar_id)
             value = Value.objects.create(grade=value_text, image=image, avatar=avatar)
             value.save()
-            json_response = {'message': 'nothing to send'}
+
+            json_response = {'valueGrade': value.grade}
             return HttpResponse(json.dumps(json_response), content_type='application/json')
     else:
         return HttpResponse(json.dumps({"nothing to see": "this is happening"}), content_type="application/json")

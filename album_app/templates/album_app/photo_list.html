@@ -113,10 +113,10 @@
                             {% endfor %}
                         </div>
                         <div class="modal-value-input">
-                            <button id="magica" value="magic" class="btn-values" style="background:green">Màgica</button>
-                            <button id="moltBona" value="veryGood" class="btn-values" style="background:orange">Molt bona</button>
-                            <button id="bona" value="good" class="btn-values" style="background:grey">Bona</button>
-                            <button id="noMagrada" value="noLike" class="btn-values" style="background:red">No m'agrada</button>
+                            <button id="magica" value="Màgica" class="btn-values" style="background:green">Màgica</button>
+                            <button id="moltBona" value="Molt Bona" class="btn-values" style="background:orange">Molt bona</button>
+                            <button id="bona" value="Bona" class="btn-values" style="background:grey">Bona</button>
+                            <button id="noMagrada" value="No m'agrada" class="btn-values" style="background:red">No m'agrada</button>
                         </div>
                         <form id="value-form" method ='POST' class="modal-value-form" action="/photo_list/add_photo_value/">
                             {% csrf_token %}
@@ -127,6 +127,25 @@
                         </form>
                     </div>
                 </div>
+
+                <!--VALUES BELOW BIG IMAGE-->
+                <div class="values">
+                    <h3>Valoració Imatge</h3>
+                    <div class="avatars-value-container">
+                        {% for value in values %}
+                            <div>
+                                <img src="{{value.avatar.photo.url}}" alt="" width="50" height="50">
+                                {% if value.grade %}
+                                <p>{{value.grade}}</p>
+                                {% else %}
+                                <p>no valora</p>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+
                 <!-- COMMENTS BELOW BIG IMAGE -->
                 <div class="comments">
                     <h3>Comentaris</h3>

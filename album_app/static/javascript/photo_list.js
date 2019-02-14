@@ -25,6 +25,7 @@ btn.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
+  reset_avatars(avatarsClass='avatar-class', buttonId='btn-comment')
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -55,9 +56,9 @@ function choose_avatar(avatar_img){
     avatar_img.style.opacity = 1;
 }
 
-function reset_avatars(){
-    avatars = document.getElementsByClassName('avatar-class');
-    btn = getElementById('btn-comment')
+function reset_avatars(avatarsClass, buttonId){
+    avatars = document.getElementsByClassName(avatarsClass);
+    btn = document.getElementById(buttonId)
     for (i=0; i < avatars.length; i++){
         avatars[i].style.opacity = 0.5;
     }
@@ -83,6 +84,7 @@ btn_value.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 span_value.onclick = function() {
   modal_value.style.display = "none";
+  reset_avatars(avatarsClass='avatar-class', buttonId='okValue')
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -135,7 +137,7 @@ function create_value(){
         type: 'POST',
         data: {'valueText': $('#valueInput').val(), 'imageValueId': $('#bigImageValueId').val() , 'avatarValueId': $('#avatarInput_value').val()},
         success: function(json){
-            console.log(json)
+            console.log(json.valueGrade)
             console.log('success')
             },
         error: function(xhr,errmsg,err){

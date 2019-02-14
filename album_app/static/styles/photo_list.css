@@ -297,22 +297,17 @@ margin:0 auto;
     flex-direction:row;
     justify-content:flex-start;
 }
-
-
 .comment-form-images img{
     width: 50px;
     height:50px;
 }
-
 .value-form-images img{
     width: 50px;
     height:50px;
 }
-
 .comment-form input{
     margin-bottom:15px;
 }
-
 
 /* MODAL VALUE */
 .modal-value {
@@ -346,7 +341,6 @@ margin:0 auto;
     margin-top:10px;
 }
 
-
 .btn-values {
     color: #fff;
     background-color: #337ab7;
@@ -362,6 +356,40 @@ margin:0 auto;
     line-height: 1.42857143;
     border-radius: 4px;
 }
+
+.values{
+    display:flex;
+    flex-direction:column;
+    width:60%;
+    margin:0 auto;
+}
+
+.values h3{
+    background-color:#f2f2f2;
+    padding:5px;
+}
+
+.avatars-value-container{
+    display:flex;
+    justify-content:center;
+}
+
+.avatars-value-container div{
+    width:100px;
+    height:100px;
+    text-align:center;
+}
+
+.avatars-value-container div img{
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+    border-radius:50%
+
+}
+
+
+
 /* Protagonistes DIV - Col right */
 
 .protagonistes{
