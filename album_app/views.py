@@ -68,17 +68,22 @@ def add_comment(request, pk):
 def add_photo_value(request):
     if request.method == 'POST':
             value_text = request.POST.get('valueText')
-            print(value_text)
             image_id = request.POST.get('imageValueId')
-            print(image_id)
             avatar_id = request.POST.get('avatarValueId')
-            print(avatar_id)
             image = Image.objects.get(id=image_id)
             avatar = Avatar.objects.get(id=avatar_id)
-            value = Value.objects.create(grade=value_text, image=image, avatar=avatar)
-            value.save()
-
-            json_response = {'valueGrade': value.grade}
+            value_exist = False
+            if len(Value.objects.filter(image=image, avatar=avatar)) > 0:
+                value_exist = True
+                value = Value.objects.get(image=image, avatar=avatar)
+                value.grade = value_text
+                value.save()
+                print(value_exist)
+            else:
+                value = Value.objects.create(grade=value_text, image=image, avatar=avatar)
+                value.save()
+                print(value_exist)
+            json_response = {'valueGrade': value.grade, 'valueId': value.id, 'avatarId': avatar_id, 'avatarPhoto': avatar.photo.url, 'valueExist': value_exist}
             return HttpResponse(json.dumps(json_response), content_type='application/json')
     else:
         return HttpResponse(json.dumps({"nothing to see": "this is happening"}), content_type="application/json")

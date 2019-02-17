@@ -137,7 +137,24 @@ function create_value(){
         type: 'POST',
         data: {'valueText': $('#valueInput').val(), 'imageValueId': $('#bigImageValueId').val() , 'avatarValueId': $('#avatarInput_value').val()},
         success: function(json){
-            console.log(json.valueGrade)
+            console.log(json.valueGrade+" "+ json.avatarId+" "+json.avatarPhoto+" "+json.valueExist)
+            if (json.valueExist == true) {
+               console.log('avatar ja ha avaluat')
+               console.log(json.valueExist)
+               $('#img'+json.valueId).attr("src", json.avatarPhoto)
+               $('#p'+json.valueId).text(json.valueGrade);
+            }
+            else {
+            console.log('mostrarà nova avaluació')
+            console.log(json.valueExist)
+                $('<img/>').attr({
+                    'id': 'img'+json.valueId,
+                    'src': json.avatarPhoto,
+                    'width': 60,
+                    'height': 60,
+                 }).appendTo('#avatar-value-container');
+                 $('#values-results').add("<p id=p"+json.valueId+"><strong>"+json.valueGrade+"</strong></p>")
+            }
             console.log('success')
             },
         error: function(xhr,errmsg,err){

@@ -133,10 +133,10 @@
                     <h3>Valoració Imatge</h3>
                     <div class="avatars-value-container">
                         {% for value in values %}
-                            <div>
-                                <img src="{{value.avatar.photo.url}}" alt="" width="50" height="50">
+                            <div id="values-results">
+                                <img id="img{{value.id}}" src="{{value.avatar.photo.url}}" alt="" width="60" height="60">
                                 {% if value.grade %}
-                                <p>{{value.grade}}</p>
+                                <p id="p{{value.id}}"><strong>{{value.grade}}</strong></p>
                                 {% else %}
                                 <p>no valora</p>
                                 {% endif %}
