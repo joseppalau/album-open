@@ -61,7 +61,7 @@
                 {% endif %}
             </div>
             {% if image_big %}
-                <img id={{image_big.id}} src="{{image_big.photo.url}}" alt="">
+                <img id={{image_big.id}} class="bigImage-img" src="{{image_big.photo.url}}" alt="">
                 <div class="bigImage-btns">
                     <button class="btn btn-primary" style="margin-right:15px;" id="btn-modal-comment">Afegeix comentari</button>
                     <button class="btn btn-primary" style="background:orange; margin-left:15px;" id="btn-modal-value">Evalua foto</button>
@@ -131,7 +131,7 @@
                 <!--VALUES BELOW BIG IMAGE-->
                 <div class="values">
                     <h3>Valoració Imatge</h3>
-                    <div class="avatars-value-container">
+                    <div id='container-values' class="avatars-value-container">
                         {% for value in values %}
                             <div id="values-results">
                                 <img id="img{{value.id}}" src="{{value.avatar.photo.url}}" alt="" width="60" height="60">
