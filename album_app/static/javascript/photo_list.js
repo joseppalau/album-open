@@ -21,6 +21,7 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
+  reset_avatars(avatarsClass='avatar-class', buttonId='btn-comment');
 }
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -44,22 +45,22 @@ function choose_avatar(avatar_img){
         btn.style.opacity = 1;
     }
     avatar_img.style.border = '1px solid green';
-    avatar = document.getElementById("avatarInput");
-    avatar_value = document.getElementById("avatarInput_value");
+    var avatar = document.getElementById("avatarInput");
+    var avatar_value = document.getElementById("avatarInput_value");
     avatar.value = avatar_img.id; //refers to avatar in comments
     avatar_value.value = avatar_img.id; // refers to avatar in image value
 
-    avatars = document.getElementsByClassName('avatar-class');
-    for (i=0; i < avatars.length; i++){
+    var avatars = document.getElementsByClassName('avatar-class');
+    for (var i=0; i < avatars.length; i++){
         avatars[i].style.opacity = 0.5;
     }
     avatar_img.style.opacity = 1;
 }
 
 function reset_avatars(avatarsClass, buttonId){
-    avatars = document.getElementsByClassName(avatarsClass);
+    var avatars = document.getElementsByClassName(avatarsClass);
     btn = document.getElementById(buttonId)
-    for (i=0; i < avatars.length; i++){
+    for (var i=0; i < avatars.length; i++){
         avatars[i].style.opacity = 0.5;
     }
     btn.disabled = true;
@@ -80,6 +81,8 @@ var okValue = document.getElementById('okValue')
 
 btn_value.onclick = function() {
   modal_value.style.display = "block";
+  reset_avatars(avatarsClass='avatar-class', buttonId='okValue')
+
 }
 // When the user clicks on <span> (x), close the modal
 span_value.onclick = function() {
@@ -142,18 +145,13 @@ function create_value(){
                console.log('avatar ja ha avaluat')
                console.log(json.valueExist)
                $('#img'+json.valueId).attr("src", json.avatarPhoto)
-               $('#p'+json.valueId).text(json.valueGrade);
+               $('#p'+json.valueId).html('<strong>'+json.valueGrade+'</strong>');
             }
             else {
             console.log('mostrarà nova avaluació')
             console.log(json.valueExist)
-                $('<img/>').attr({
-                    'id': 'img'+json.valueId,
-                    'src': json.avatarPhoto,
-                    'width': 60,
-                    'height': 60,
-                 }).appendTo('#avatar-value-container');
-                 $('#values-results').add("<p id=p"+json.valueId+"><strong>"+json.valueGrade+"</strong></p>")
+            $('#container-values').append('<div><img id="img'+json.valueId+'"src="'+json.avatarPhoto+'"><p id=p"'+json.valueId+'"><strong>'+json.valueGrade+'</strong></p></div>')
+
             }
             console.log('success')
             },
