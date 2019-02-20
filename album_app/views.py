@@ -23,17 +23,17 @@ def image_list(request):
     return render(request, 'album_app/photo_list.html', context)
 
 
-def photo_main_big(request, pk):
-    image = get_object_or_404(Image, pk=pk)
-    values = Value.objects.filter(image=image)
-    album = get_object_or_404(Album, client=request.user)
-    all_images = album.images.all()
-    images_selected = album.images.filter(selected=True)
-    num_selected = len(images_selected)
-    comments = image.comments.order_by('-date')
-    context = {'album': album, 'images': all_images, 'image_big': image,
-               'num_selected': num_selected, 'images_selected': images_selected, 'comments': comments, 'values': values}
-    return render(request, 'album_app/photo_list.html', context)
+def photo_main_big(request):
+    if request.method == 'POST':
+        imageId = request.POST.get('imageId')
+        image = Image.objects.get(id=imageId)
+        comments = Comment.objects.filter(image=image)
+        values = Value.objects.filter(image=image)
+        json_response = {'imageURL': image.photo.url}
+        return HttpResponse(json.dumps(json_response), content_type='application/json')
+    else:
+        return HttpResponse(json.dumps({"nothing to see": "this is happening"}), content_type="application/json")
+
 
 
 def add_delete_photo(request, pk):

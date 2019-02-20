@@ -4,7 +4,7 @@ from . import views
 urlpatterns = [
     path('', views.pag_inici, name='inici'),
     path('photo_list/', views.image_list, name='photo_list'),
-    path('photo_list/<int:pk>/', views.photo_main_big, name='photo_main_big'),
+    path('photo_list/', views.photo_main_big, name='photo_main_big'),
     path('photo_list/album/<int:pk>/', views.add_delete_photo, name='add_delete_photo'),
     path('photo_list/album_big_page/', views.album_big_page, name='album_big_page'),
     path('photo_list/add_comment/<int:pk>', views.add_comment, name='add_comment'),
