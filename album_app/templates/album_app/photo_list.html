@@ -45,7 +45,7 @@
             </div>
             <div class="container1-img">
                 {% for image in images %}
-                <a href="{% url 'photo_main_big' pk=image.pk %}"><img id='{{image.id}}' src="{{ image.photo.url }}" alt=""></a>
+                <img id='{{image.id}}' src="{{ image.photo.url }}" alt="" onclick="big_click(this)"></a>
                 {% endfor %}
             </div>
         </div>
@@ -61,7 +61,7 @@
                 {% endif %}
             </div>
             {% if image_big %}
-                <img id={{image_big.id}} class="bigImage-img" src="{{image_big.photo.url}}" alt="">
+                <img id='image-big' class="bigImage-img" src="{{image_big.photo.url}}" alt="">
                 <div class="bigImage-btns">
                     <button class="btn btn-primary" style="margin-right:15px;" id="btn-modal-comment">Afegeix comentari</button>
                     <button class="btn btn-primary" style="background:orange; margin-left:15px;" id="btn-modal-value">Evalua foto</button>

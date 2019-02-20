@@ -35,6 +35,30 @@ window.onclick = function(event) {
   }
 }
 
+function big_click(img){
+    console.log('form submitted!');
+    console.log('id to ajax:' + img.id)
+    process_image(img.id);
+    };
+
+function process_image(id) {
+        $.ajax({
+        url: '/photo_list/big_image/',
+        type: 'POST',
+        data: {'imageId': id},
+        success: function(json){
+            console.log(json.imageURL);
+            $('#image-big').attr({
+                src: json.imageURL,
+                });
+            },
+        error: function(xhr,errmsg,err){
+            console.log(status.xhr + ": " + xhr.responseText);
+            }
+        });
+    }
+
+
 //Avatars
 var count_avatars = 0
 function choose_avatar(avatar_img){

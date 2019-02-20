@@ -27,8 +27,6 @@ def photo_main_big(request):
     if request.method == 'POST':
         imageId = request.POST.get('imageId')
         image = Image.objects.get(id=imageId)
-        comments = Comment.objects.filter(image=image)
-        values = Value.objects.filter(image=image)
         json_response = {'imageURL': image.photo.url}
         return HttpResponse(json.dumps(json_response), content_type='application/json')
     else:
