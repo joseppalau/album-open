@@ -143,19 +143,17 @@
                             </div>
                         {% endfor %}
                     </div>
-
                 </div>
-
                 <!-- COMMENTS BELOW BIG IMAGE -->
                 <div class="comments">
                     <h3>Comentaris</h3>
-                    <div class="comments-list">
+                    <div id="comments-listId" class="comments-list">
                         {% for comment in comments %}
                             <div class="comments-list-content">
-                                <div style="width:10%">
-                                    <img style="display:block;float:left;border-radius:50%" src="{{comment.avatar.photo.url}}" alt="" width="50" height="50">
+                                <div class="img-comment">
+                                    <img src="{{comment.avatar.photo.url}}" alt="" width="50" height="50">
                                 </div>
-                                <div style="width:90%">
+                                <div class="text-comment" style="width:90%">
                                     <span style="float:right;color:grey; font-size:10px;">{{comment.date}}</span>
                                     <p style="width:80%; font-size:15px;">{{comment.text}}</p>
                                 </div>

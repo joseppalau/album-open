@@ -162,6 +162,31 @@ margin:0 auto;
     margin-bottom:10px;
 }
 
+.img-comment{
+    width:10%;
+}
+
+.img-comment img{
+    display:block;
+    float: left;
+    border-radius: 50%;
+}
+
+.text-comment{
+    width:90%;
+}
+
+.text-comment span{
+    float: right;
+    color: grey;
+    font-size: 10px;
+}
+
+.text-comment p{
+    width:80%;
+    font-size: 15px;
+}
+
 .container-barra{
     display:flex;
     flex-direction:column;

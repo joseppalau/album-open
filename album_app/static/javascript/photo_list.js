@@ -51,6 +51,7 @@ function process_image(id) {
             $('#image-big').attr({
                 src: json.imageURL,
             });
+            //values
             $('#container-values').empty();
             if (json.values_id.length > 0) {
                 console.log('values div empty')
@@ -73,6 +74,36 @@ function process_image(id) {
                 }
             } else{
                 $('#container-values').append('<p>No values</p>')
+            }
+            //comments
+            $('#comments-listId').empty()
+            if (json.text_comments.length > 0 ) {
+                var divComments = document.getElementById('comments-listId')
+                for (var i = 0; i < json.text_comments.length; i++) {
+                    var newDiv = document.createElement('div')
+                    divComments.appendChild(newDiv)
+                    newDiv.className = 'comments-list-content'
+                    var newDivImg = document.createElement('div')
+                    newDiv.appendChild(newDivImg)
+                    newDivImg.className = 'img-comment'
+                    var newImg = document.createElement('img')
+                    newImg.src = json.avatars_photo_url_c[i]
+                    newImg.width = 50
+                    newImg.height = 50
+                    newDivImg.appendChild(newImg)
+                    var newDivP = document.createElement('div')
+                    newDivP.className = 'text-comment'
+                    newDiv.appendChild(newDivP)
+                    var newSpan = document.createElement('span')
+                    var t = document.createTextNode(json.dates[i])
+                    newSpan.appendChild(t)
+                    newDivP.appendChild(newSpan)
+                    var newP = document.createElement('p')
+                    newP.innerHTML = json.text_comments[i]
+                    newDivP.appendChild(newP)
+                }
+            } else {
+                $('#comments-listId').append('<p>No comments</p>')
             }
         },
         error: function(xhr,errmsg,err){

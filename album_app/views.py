@@ -3,6 +3,7 @@ from .models import Album, Image, Comment, Avatar, Value
 from django.http import HttpResponse
 from django.http import JsonResponse
 from django.utils import timezone
+from datetime import datetime
 from django.contrib.auth.decorators import login_required
 import json
 from django.views.decorators.csrf import ensure_csrf_cookie
@@ -27,14 +28,18 @@ def photo_main_big(request):
     if request.method == 'POST':
         image_id = request.POST.get('imageId')
         image = get_object_or_404(Image, id=image_id)
-        print('image: ', image, image.id)
         values = Value.objects.filter(image=image)
-        print('values', len(values))
         values_id = [value.id for value in values]
-        print('values_id :', len(values_id))
         avatars_photo_url = [value.avatar.photo.url for value in values]
         text_grades = [value.grade for value in values]
-        json_response = {'imageURL': image.photo.url, 'values_id': values_id, 'avatars_photo_url': avatars_photo_url, 'text_grades': text_grades}
+        comments = image.comments.all()
+        avatars_photo_url_c = [comment.avatar.photo.url for comment in comments]
+        text_comments = [comment.text for comment in comments]
+        dates = [comment.date.strftime('%d / %b / %y') for comment in comments]
+
+        json_response = {'imageURL': image.photo.url, 'values_id': values_id, 'avatars_photo_url': avatars_photo_url,
+                         'text_grades': text_grades, 'avatars_photo_url_c': avatars_photo_url_c,
+                         'text_comments': text_comments, 'dates': dates}
         return HttpResponse(json.dumps(json_response), content_type='application/json')
     else:
         return HttpResponse(json.dumps({"nothing to see": "this is happening"}), content_type="application/json")
