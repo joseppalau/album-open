@@ -25,9 +25,16 @@ def image_list(request):
 
 def photo_main_big(request):
     if request.method == 'POST':
-        imageId = request.POST.get('imageId')
-        image = Image.objects.get(id=imageId)
-        json_response = {'imageURL': image.photo.url}
+        image_id = request.POST.get('imageId')
+        image = get_object_or_404(Image, id=image_id)
+        print('image: ', image, image.id)
+        values = Value.objects.filter(image=image)
+        print('values', len(values))
+        values_id = [value.id for value in values]
+        print('values_id :', len(values_id))
+        avatars_photo_url = [value.avatar.photo.url for value in values]
+        text_grades = [value.grade for value in values]
+        json_response = {'imageURL': image.photo.url, 'values_id': values_id, 'avatars_photo_url': avatars_photo_url, 'text_grades': text_grades}
         return HttpResponse(json.dumps(json_response), content_type='application/json')
     else:
         return HttpResponse(json.dumps({"nothing to see": "this is happening"}), content_type="application/json")

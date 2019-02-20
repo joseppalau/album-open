@@ -37,7 +37,7 @@ window.onclick = function(event) {
 
 function big_click(img){
     console.log('form submitted!');
-    console.log('id to ajax:' + img.id)
+    console.log('id to ajax:' + img.id);
     process_image(img.id);
     };
 
@@ -46,12 +46,35 @@ function process_image(id) {
         url: '/photo_list/big_image/',
         type: 'POST',
         data: {'imageId': id},
-        success: function(json){
+        success: function(json) {
             console.log(json.imageURL);
             $('#image-big').attr({
                 src: json.imageURL,
-                });
-            },
+            });
+            $('#container-values').empty();
+            if (json.values_id.length > 0) {
+                console.log('values div empty')
+                console.log(json.values_id.length)
+                var divParent = document.getElementById('container-values')
+                for (var i = 0; i < json.values_id.length; i++) {
+                    var newDiv = document.createElement('div')
+                    divParent.appendChild(newDiv)
+                    console.log('new div created')
+                    newDiv.id = 'values-'+json.values_id[i]
+                    var newImg = document.createElement('img')
+                    newImg.id = 'img'+json.values_id[i]
+                    newImg.src = json.avatars_photo_url[i]
+                    newImg.width = 60
+                    newImg.height = 60
+                    newDiv.appendChild(newImg)
+                    var newP = document.createElement('p')
+                    newP.innerHTML = '<strong>'+json.text_grades[i]+'</strong>'
+                    newDiv.appendChild(newP)
+                }
+            } else{
+                $('#container-values').append('<p>No values</p>')
+            }
+        },
         error: function(xhr,errmsg,err){
             console.log(status.xhr + ": " + xhr.responseText);
             }

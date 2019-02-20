@@ -51,7 +51,7 @@
     display:flex;
     flex-direction:column;
     justify-content:center;
-    align-items:space-around;
+    align-items:center;
     margin-top:25px;
     margin-bottom:25px;
 }
@@ -167,7 +167,7 @@ margin:0 auto;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    width:75%
+    width:75%;
     margin-top:20px;
     margin-bottom:20px;
 }
