@@ -42,6 +42,8 @@ function big_click(img){
     console.log('form submitted!');
     console.log('id to ajax:' + img.id);
     $('#bigImageValueId').val(img.id);
+    $('#container-values').empty();
+    $('#comments-listId').empty()
     process_image(img.id);
     };
 
@@ -57,7 +59,6 @@ function process_image(id) {
             });
             //values
             if (json.values_id.length > 0) {
-                $('#container-values').empty();
                 console.log('values div empty')
                 console.log(json.values_id.length)
                 var divParent = document.getElementById('container-values')
@@ -77,10 +78,9 @@ function process_image(id) {
                     newDiv.appendChild(newP)
                 }
             } else{
-                $('#container-values').append('<p>No values</p>')
+                $('#container-values').append('<p id="no-valuesId">No values</p>')
             }
             //comments
-            $('#comments-listId').empty()
             if (json.text_comments.length > 0 ) {
                 var divComments = document.getElementById('comments-listId')
                 for (var i = 0; i < json.text_comments.length; i++) {
@@ -107,7 +107,7 @@ function process_image(id) {
                     newDivP.appendChild(newP)
                 }
             } else {
-                $('#comments-listId').append('<p>No comments</p>')
+                $('#comments-listId').append('<p id="no-commentsId">No comments</p>')
             }
         },
         error: function(xhr,errmsg,err){
@@ -211,6 +211,8 @@ $('#comment-form').on('submit', function(event){
     event.preventDefault();
     console.log('comment form submitted');
     $('#modalComment').hide();
+    $('#no-commentsId').empty();
+
     create_comment();
     });
 
@@ -257,6 +259,7 @@ $('#value-form').on('submit', function(event){
     event.preventDefault();
     console.log('form submitted!');
     $('#modal-value').hide()
+    $('#no-valuesId').empty()
     create_value();
 });
 
