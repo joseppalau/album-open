@@ -74,7 +74,7 @@
                             <h3 id="modal-title">Afegir Comentari</h3>
                         </div>
                         <div>
-                            <form class="comment-form" action="{% url 'add_comment' pk=image_big.pk %}" method="post">
+                            <form id="comment-form" class="comment-form" action="/photo_list/add_comment/" method="post">
                                 {% csrf_token %}
                                 <div class="comment-form-content">
                                     <div class="comment-form-images">

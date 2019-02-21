@@ -23,7 +23,7 @@ def image_list(request):
     context = {'images': all_images, 'image_big': image_big, 'album': album, 'num_selected': num_selected, 'images_selected': images_selected, 'values': values}
     return render(request, 'album_app/photo_list.html', context)
 
-
+#main photo changes with ajax
 def photo_main_big(request):
     if request.method == 'POST':
         image_id = request.POST.get('imageId')
@@ -33,6 +33,7 @@ def photo_main_big(request):
         avatars_photo_url = [value.avatar.photo.url for value in values]
         text_grades = [value.grade for value in values]
         comments = image.comments.all()
+        print('comments length', len(comments))
         avatars_photo_url_c = [comment.avatar.photo.url for comment in comments]
         text_comments = [comment.text for comment in comments]
         dates = [comment.date.strftime('%d / %b / %y') for comment in comments]
@@ -64,17 +65,24 @@ def album_big_page(request):
     context = {'images_selected': images_selected, 'album': album}
     return render(request, 'album_app/album_big_page.html', context)
 
-
-def add_comment(request, pk):
-    image = get_object_or_404(Image, pk=pk)
+#add commentns with ajax
+def add_comment(request):
     if request.method == 'POST':
-        avatar_id = request.POST.get('avatar')
+        img_id = request.POST.get('imageId')
+        avatar_id = request.POST.get('avatarInput')
         avatar = Avatar.objects.get(id=avatar_id)
-        comment = Comment.objects.create(image=image, avatar=avatar, text=request.POST.get('comentari'), date=timezone.now())
+        print(avatar.photo.url)
+        image = Image.objects.get(id=img_id)
+        comment = Comment.objects.create(image=image, avatar=avatar, text=request.POST.get('text_comment'), date=timezone.now())
         comment.save()
-    return redirect('photo_main_big', pk=pk)
+        json_response = {'avatarImage': avatar.photo.url, 'comment': comment.text,
+                         'comment_id': comment.id, 'date': timezone.now().strftime('%d / %b / %y')}
+        return HttpResponse(json.dumps(json_response), content_type='application/json')
+    else:
+        return HttpResponse(json.dumps({"nothing to see": "this is happening"}), content_type="application/json")
 
 
+#add photos with ajax
 def add_photo_value(request):
     if request.method == 'POST':
             value_text = request.POST.get('valueText')

@@ -35,9 +35,13 @@ window.onclick = function(event) {
   }
 }
 
+//APPLY AJAX FOR COMMENTS AND VALUES WHEN BIG IMAGE CHANGES
+var current_imgId = ''
 function big_click(img){
+    current_imgId = img.id
     console.log('form submitted!');
     console.log('id to ajax:' + img.id);
+    $('#bigImageValueId').val(img.id);
     process_image(img.id);
     };
 
@@ -52,8 +56,8 @@ function process_image(id) {
                 src: json.imageURL,
             });
             //values
-            $('#container-values').empty();
             if (json.values_id.length > 0) {
+                $('#container-values').empty();
                 console.log('values div empty')
                 console.log(json.values_id.length)
                 var divParent = document.getElementById('container-values')
@@ -202,7 +206,53 @@ buttons_value[3].onclick = function(){
         btnAction(3)
     }
 
-// Ajax request
+// comments request for creating comments
+$('#comment-form').on('submit', function(event){
+    event.preventDefault();
+    console.log('comment form submitted');
+    $('#modalComment').hide();
+    create_comment();
+    });
+
+function create_comment(){
+    $.ajax({
+        url:'/photo_list/add_comment/',
+        type:'POST',
+        data:{'imageId': current_imgId , 'avatarInput': $('#avatarInput').val(),'text_comment': $('#textComment').val()},
+        success: function(json){
+            var container = document.getElementById('comments-listId')
+            var divComment = document.createElement('div')
+            divComment.className = 'comments-list-content'
+            divComment.id = 'comment-'+json.comment_id
+            container.insertBefore(divComment, container.firstChild)
+            var divImg = document.createElement('div')
+            divImg.className = 'img-comment'
+            divImg.id = 'img-'+json.comment_id
+            divComment.appendChild(divImg)
+            var img = document.createElement('img')
+            img.src = json.avatarImage
+            img.width = 50
+            img.height = 50
+            divImg.appendChild(img)
+            var divText = document.createElement('div')
+            divText.className = 'text-comment'
+            divComment.appendChild(divText)
+            var newSpan = document.createElement('span')
+            var t = document.createTextNode(json.date)
+            newSpan.appendChild(t)
+            divText.appendChild(newSpan)
+            var newP = document.createElement('p')
+            newP.innerHTML= json.comment
+            divText.appendChild(newP)
+        },
+        error: function(xhr,errmsg,err){
+            console.log(status.xhr + ": " + xhr.responseText);
+            }
+    })
+}
+
+
+// Ajax request for creating or changing values
 $('#value-form').on('submit', function(event){
     event.preventDefault();
     console.log('form submitted!');
@@ -223,7 +273,7 @@ function create_value(){
                console.log('avatar ja ha avaluat')
                console.log(json.valueExist)
                $('#img'+json.valueId).attr("src", json.avatarPhoto)
-               $('#p'+json.valueId).html('<strong>'+json.valueGrade+'</strong>');
+               $('#p'+json.valueId).html('<strong>'+ json.valueGrade +'</strong>');
             }
             else {
             console.log('mostrarà nova avaluació')
