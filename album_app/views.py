@@ -19,8 +19,10 @@ def image_list(request):
     images_selected = album.images.filter(selected=True)
     num_selected = len(images_selected)
     image_big = all_images[0]
+    comments = image_big.comments.all().order_by('-date')
     values = Value.objects.filter(image=image_big)
-    context = {'images': all_images, 'image_big': image_big, 'album': album, 'num_selected': num_selected, 'images_selected': images_selected, 'values': values}
+    context = {'images': all_images, 'image_big': image_big, 'album': album, 'num_selected': num_selected,
+               'images_selected': images_selected, 'values': values, 'comments': comments}
     return render(request, 'album_app/photo_list.html', context)
 
 #main photo changes with ajax
@@ -32,7 +34,7 @@ def photo_main_big(request):
         values_id = [value.id for value in values]
         avatars_photo_url = [value.avatar.photo.url for value in values]
         text_grades = [value.grade for value in values]
-        comments = image.comments.all()
+        comments = image.comments.all().order_by('-date')
         print('comments length', len(comments))
         avatars_photo_url_c = [comment.avatar.photo.url for comment in comments]
         text_comments = [comment.text for comment in comments]

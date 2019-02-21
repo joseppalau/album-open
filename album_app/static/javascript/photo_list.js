@@ -120,6 +120,9 @@ function process_image(id) {
 //Avatars
 var count_avatars = 0
 function choose_avatar(avatar_img){
+    for (var i = 0; i < buttons_value.length; i++){
+        buttons_value[i].disabled = false
+    }
     count_avatars += 1;
     if (count_avatars > 0){
         btn = document.getElementById('btn-comment');
@@ -156,7 +159,6 @@ var btn_value = document.getElementById("btn-modal-value");
 // Get the <span> element that closes the modal
 var span_value = document.getElementById("close-value");
 // When the user clicks the button, open the modal
-
 var buttons_value = document.getElementsByClassName('btn-values')
 var input_value = document.getElementById('valueInput')
 var okValue = document.getElementById('okValue')
@@ -164,7 +166,9 @@ var okValue = document.getElementById('okValue')
 btn_value.onclick = function() {
   modal_value.style.display = "block";
   reset_avatars(avatarsClass='avatar-class', buttonId='okValue')
-
+    for (var i = 0; i < buttons_value.length; i++){
+        buttons_value[i].disabled = true
+    }
 }
 // When the user clicks on <span> (x), close the modal
 span_value.onclick = function() {
@@ -256,6 +260,9 @@ function create_comment(){
 
 // Ajax request for creating or changing values
 $('#value-form').on('submit', function(event){
+     for (var i = 0; i < buttons_value.length; i++){
+        buttons_value[i].disabled = false
+    }
     event.preventDefault();
     console.log('form submitted!');
     $('#modal-value').hide()
