@@ -1,7 +1,7 @@
 var selected = document.getElementById('btnToAlbum')
-var imgId = $('#bigImageValueId').val();
+var current_imgId = $('#bigImageValueId').val();
 console.log(selected.value)
-console.log(imgId)
+console.log(current_imgId)
 
 if (selected.value == 'true'){
     selected.innerHTML = 'Treu-la'
@@ -20,7 +20,7 @@ function album_connect(){
     $.ajax({
         type: 'POST',
         url: '/photo_list/album/',
-        data: {'img_id': imgId},
+        data: {'img_id': current_imgId},
         success: function(json){
             console.log('selected?:' + json.image_selected)
             console.log('images in album: ' + json.imagesInAlbum)
@@ -81,7 +81,7 @@ window.onclick = function(event) {
 
 
 //APPLY AJAX FOR COMMENTS AND VALUES WHEN BIG IMAGE CHANGES
-var current_imgId = ''
+
 function big_click(img){
     current_imgId = img.id
     console.log('form submitted!');
