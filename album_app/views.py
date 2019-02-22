@@ -18,11 +18,16 @@ def image_list(request):
     all_images = album.images.all()
     images_selected = album.images.filter(selected=True)
     num_selected = len(images_selected)
+    img_status = ''
     image_big = all_images[0]
+    if image_big.selected:
+        img_status = 'true'
+    else:
+        img_status = 'false'
     comments = image_big.comments.all().order_by('-date')
     values = Value.objects.filter(image=image_big)
     context = {'images': all_images, 'image_big': image_big, 'album': album, 'num_selected': num_selected,
-               'images_selected': images_selected, 'values': values, 'comments': comments}
+               'images_selected': images_selected, 'values': values,'comments': comments, 'img_status': img_status}
     return render(request, 'album_app/photo_list.html', context)
 
 #main photo changes with ajax
@@ -42,23 +47,29 @@ def photo_main_big(request):
 
         json_response = {'imageURL': image.photo.url, 'values_id': values_id, 'avatars_photo_url': avatars_photo_url,
                          'text_grades': text_grades, 'avatars_photo_url_c': avatars_photo_url_c,
-                         'text_comments': text_comments, 'dates': dates}
+                         'text_comments': text_comments, 'dates': dates, 'img_selected': image.selected}
         return HttpResponse(json.dumps(json_response), content_type='application/json')
     else:
         return HttpResponse(json.dumps({"nothing to see": "this is happening"}), content_type="application/json")
 
 
 
-def add_delete_photo(request, pk):
-    image = get_object_or_404(Image, pk=pk)
-    album = get_object_or_404(Album, client=request.user)
-    if image.selected:
-        image.selected = False
+def add_delete_photo(request):
+    if request.method == 'POST':
+        image = get_object_or_404(Image, id=request.POST.get('img_id'))
+        album = get_object_or_404(Album, client=request.user)
+        if image.selected:
+            image.selected = False
+        else:
+            image.selected = True
+        image.save()
+        totalImages = len(album.images.all())
+        imagesInAlbum = len(album.images.filter(selected=True))
+        print(imagesInAlbum)
+        json_response = {'image_selected': image.selected, 'imagesInAlbum': imagesInAlbum, 'totalImages': totalImages}
+        return HttpResponse(json.dumps(json_response), content_type='application/json')
     else:
-        image.selected = True
-    image.save()
-    num = album.images.all()[0].pk
-    return redirect('photo_main_big', pk=num)
+        return HttpResponse(json.dumps({"nothing to see": "this is happening"}), content_type="application/json")
 
 
 def album_big_page(request):

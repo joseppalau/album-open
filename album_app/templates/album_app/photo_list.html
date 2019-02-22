@@ -49,19 +49,39 @@
                 {% endfor %}
             </div>
         </div>
+        <!--Progress bar-->
+        <div class="container-barra">
+            <h3>Estat de l'album</h3>
+            <canvas id="album-bar" width="200px" height="25px"></canvas>
+            <p id="barText">{{num_selected}} fotos de {{album.max_photos}}</p>
+            <input type="hidden" id="num_selected" name="variable" value="{{num_selected}}">
+            <input type="hidden" id="max_photos" name="variable2" value="{{album.max_photos}}">
+        </div>
+        <!-- imagegallery-->
+        <div id="carousel" class="container-gallery">
+            {% for image in images_selected %}
+                <div class="mySlides">
+                    <img src="{{image.photo.url}}" style="width:100%">
+                </div>
+            {% endfor %}
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div>
+            <a class="btn btn-primary " style="margin-top:15px;" href="{% url 'album_big_page' %}">Amplia</a>
+        </div>
+    </div>
+    <!-- COLUMN 2 (RIGHT) -->
+    <div class="col-2">
         <!--BIG IMAGE-->
         <div class="bigImage">
-            <div class="status-bigImage">
-                {% if image_big.selected %}
-                <p>Foto <strong>Si</strong> seleccionada</p>
-                <a class="btn btn-primary" style="background:grey; width:150px; font-size:18px;" href="{% url 'add_delete_photo' pk=image_big.pk %}">Treu-la</a>
-                {% else %}
-                <p>Foto <strong>No</strong> seleccionada</p>
-                <a class="btn btn-primary" style="background:green; width:150px; font-size:18px" href="{% url 'add_delete_photo' pk=image_big.pk %}">Afegeix-la</a>
-                {% endif %}
-            </div>
             {% if image_big %}
+                <p style="color:black;font-size:25px;text-align:center;">Foto a triar</p>
                 <img id='image-big' class="bigImage-img" src="{{image_big.photo.url}}" alt="">
+                <div class="status-bigImage">
+                <button id="btnToAlbum" class="btn btn-primary" style="width:150px; font-size:18px;" value="{{ img_status }}">Treu-la</button>
+                </div>
                 <div class="bigImage-btns">
                     <button class="btn btn-primary" style="margin-right:15px;" id="btn-modal-comment">Afegeix comentari</button>
                     <button class="btn btn-primary" style="background:orange; margin-left:15px;" id="btn-modal-value">Evalua foto</button>
@@ -127,7 +147,6 @@
                         </form>
                     </div>
                 </div>
-
                 <!--VALUES BELOW BIG IMAGE-->
                 <div class="values">
                     <h3>Valoració Imatge</h3>
@@ -163,10 +182,7 @@
                 </div>
             {% endif %}
         </div>
-    </div>
-
-    <!-- COLUMN 2 (RIGHT) -->
-    <div class="col-2">
+        <!--
         <div class="protagonistes">
             <h3>Els protagonistes</h3>
             <div class="protagonistes-images">
@@ -177,30 +193,7 @@
                     </div>
                 {% endfor %}
             </div>
-        </div>
-        
-        <div class="container-barra">
-            <h3>Estat de l'album</h3>
-            <canvas id="album-bar" width="200px" height="25px"></canvas>
-            <p>{{num_selected}} fotos de {{album.max_photos}}</p>
-            <input type="hidden" id="num_selected" name="variable" value="{{num_selected}}">
-            <input type="hidden" id="max_photos" name="variable2" value="{{album.max_photos}}">
-        </div>
-        <!-- imagegallery-->
-        <div id="carousel" class="container-gallery">
-            {% for image in images_selected %}
-                <div class="mySlides">
-                    <img src="{{image.photo.url}}" style="width:100%">
-                </div>
-            {% endfor %}
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-
-        <div>
-            <a class="btn btn-primary " style="margin-top:15px;" href="{% url 'album_big_page' %}">Amplia</a>
-        </div>
+        </div>-->
     </div>
 </div>
 

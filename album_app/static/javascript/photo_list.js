@@ -1,3 +1,45 @@
+var selected = document.getElementById('btnToAlbum')
+var imgId = $('#bigImageValueId').val();
+console.log(selected.value)
+console.log(imgId)
+
+if (selected.value == 'true'){
+    selected.innerHTML = 'Treu-la'
+    selected.style.backgroundColor = 'grey'
+} else{
+    selected.innerHTML = 'Afegeix-la'
+    selected.style.backgroundColor = 'green'
+}
+
+$('#btnToAlbum').on('click', function(event){
+    event.preventDefault()
+    album_connect()
+})
+
+function album_connect(){
+    $.ajax({
+        type: 'POST',
+        url: '/photo_list/album/',
+        data: {'img_id': imgId},
+        success: function(json){
+            console.log('selected?:' + json.image_selected)
+            console.log('images in album: ' + json.imagesInAlbum)
+            if (json.image_selected == true ){
+                selected.innerHTML = 'Treu-la'
+                selected.style.backgroundColor = 'grey'
+            } else {
+                selected.innerHTML = 'Afegeix-la'
+                selected.style.backgroundColor = 'green'
+            }
+            $('#barText').html(json.imagesInAlbum + ' fotus de ' + json.totalImages)
+
+        } ,
+        error: function(xhr,errmsg,err){
+            console.log(status.xhr + ": " + xhr.responseText);
+            }
+    })
+}
+
 // Progress Bar
 var num_selected = document.getElementById("num_selected").value
 var max_photos = document.getElementById("max_photos").value
@@ -35,6 +77,9 @@ window.onclick = function(event) {
   }
 }
 
+// AJAX BUTTONS FOR ALBUM
+
+
 //APPLY AJAX FOR COMMENTS AND VALUES WHEN BIG IMAGE CHANGES
 var current_imgId = ''
 function big_click(img){
@@ -54,9 +99,17 @@ function process_image(id) {
         data: {'imageId': id},
         success: function(json) {
             console.log(json.imageURL);
+            console.log(json.img_selected)
             $('#image-big').attr({
                 src: json.imageURL,
             });
+            if (json.img_selected == true){
+                selected.innerHTML = 'Treu-la'
+                selected.style.background = 'grey'
+            } else{
+                selected.innerHTML = 'Afegeix-la'
+                selected.style.background = 'green'
+            }
             //values
             if (json.values_id.length > 0) {
                 console.log('values div empty')
