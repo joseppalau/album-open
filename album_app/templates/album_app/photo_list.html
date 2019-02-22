@@ -60,8 +60,8 @@
         <!-- imagegallery-->
         <div id="carousel" class="container-gallery">
             {% for image in images_selected %}
-                <div class="mySlides">
-                    <img src="{{image.photo.url}}" style="width:100%">
+                <div class="mySlides" style="width:100%">
+                    <img src="{{image.photo.url}}" style="width:100%; display: block; margin: 0 auto;">
                 </div>
             {% endfor %}
             <!-- Next and previous buttons -->
@@ -148,7 +148,7 @@
                     </div>
                 </div>
                 <!--VALUES BELOW BIG IMAGE-->
-                <div class="values">
+                <div class="values" style="background:white;margin-top:20px;">
                     <h3>Valoració Imatge</h3>
                     <div id='container-values' class="avatars-value-container">
                         {% for value in values %}
@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 <!-- COMMENTS BELOW BIG IMAGE -->
-                <div class="comments">
+                <div class="comments" style="background:white;">
                     <h3>Comentaris</h3>
                     <div id="comments-listId" class="comments-list">
                         {% for comment in comments %}
