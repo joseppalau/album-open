@@ -31,6 +31,7 @@ def image_list(request):
     return render(request, 'album_app/photo_list.html', context)
 
 #main photo changes with ajax
+@login_required
 def photo_main_big(request):
     if request.method == 'POST':
         image_id = request.POST.get('imageId')
@@ -53,7 +54,7 @@ def photo_main_big(request):
         return HttpResponse(json.dumps({"nothing to see": "this is happening"}), content_type="application/json")
 
 
-
+@login_required
 def add_delete_photo(request):
     if request.method == 'POST':
         image = get_object_or_404(Image, id=request.POST.get('img_id'))
@@ -71,7 +72,7 @@ def add_delete_photo(request):
     else:
         return HttpResponse(json.dumps({"nothing to see": "this is happening"}), content_type="application/json")
 
-
+@login_required
 def album_big_page(request):
     album = get_object_or_404(Album, client=request.user)
     images_selected = album.images.filter(selected=True)
@@ -79,6 +80,7 @@ def album_big_page(request):
     return render(request, 'album_app/album_big_page.html', context)
 
 #add commentns with ajax
+@login_required
 def add_comment(request):
     if request.method == 'POST':
         img_id = request.POST.get('imageId')
@@ -96,6 +98,7 @@ def add_comment(request):
 
 
 #add photos with ajax
+@login_required
 def add_photo_value(request):
     if request.method == 'POST':
             value_text = request.POST.get('valueText')
