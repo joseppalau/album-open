@@ -3,7 +3,7 @@ from .models import Image, Album, Avatar, Comment, Value
 
 # Register your models here.
 class AlbumAdmin(admin.ModelAdmin):
-    list_display = ['title', 'client',]
+    list_display = ['title', 'admin']
 
     class Meta:
         model = Album

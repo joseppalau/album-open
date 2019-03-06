@@ -26,8 +26,8 @@ SECRET_KEY = '%q)78(7ysgc5m^g1vknch&g%$qstg8o*hq$29=yhha+(ihi=*='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-LOGIN_REDIRECT_URL = 'photo_list'
-LOGOUT_REDIRECT_URL = 'inici'
+LOGIN_REDIRECT_URL = 'user_site'
+LOGOUT_REDIRECT_URL = 'login'
 
 ALLOWED_HOSTS = []
 
@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'montlleo_album.urls'
+ROOT_URLCONF = 'album_open.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'montlleo_album.wsgi.application'
+WSGI_APPLICATION = 'album_open.wsgi.application'
 
 
 # Database

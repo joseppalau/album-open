@@ -1,16 +1,37 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Album, Image, Comment, Avatar, Value
 from django.http import HttpResponse
-from django.http import JsonResponse
 from django.utils import timezone
-from datetime import datetime
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 import json
-from django.views.decorators.csrf import ensure_csrf_cookie
 
 
-def pag_inici(request):
-    return render(request, 'album_app/inici.html')
+def landing_page(request):
+    return render(request, 'album_app/landing.html')
+
+
+def user_register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+        else:
+            return HttpResponse('form not valid')
+    else:
+        form = UserCreationForm()
+        context = {'form': form}
+        return render(request, 'album_app/user-register.html', context)
+
+
+@login_required
+def user_site(request):
+    user = request.user
+    context = {'user': user}
+    return render(request, 'album_app/user-site.html', context)
 
 @login_required
 def image_list(request):
