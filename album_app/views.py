@@ -30,7 +30,8 @@ def user_register(request):
 @login_required
 def user_site(request):
     user = request.user
-    context = {'user': user}
+    albums = user.albums.all()
+    context = {'user': user, 'albums': albums}
     return render(request, 'album_app/user-site.html', context)
 
 @login_required

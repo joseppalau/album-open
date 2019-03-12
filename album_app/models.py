@@ -9,12 +9,12 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
 
     def __str__(self):
-        return self.user
+        return self.user.username
 
 
 class Album(models.Model):
-    admin = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    participants = models.ManyToManyField(Profile)
+    admin = models.ForeignKey(User, on_delete=models.CASCADE, related_name='albums', null=True)
+    profiles = models.ManyToManyField(Profile, blank=True, related_name='profiles')
     title = models.CharField(max_length=200)
     max_photos = models.IntegerField(default=0)
 
@@ -43,6 +43,7 @@ class Image(models.Model):
 
 class Avatar(models.Model):
     name = models.CharField(max_length=100)
+
     album = models.ForeignKey(Album, default=1, on_delete=models.CASCADE, related_name='avatars')
     width = models.IntegerField(default=50)
     height = models.IntegerField(default=50)

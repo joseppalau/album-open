@@ -1,12 +1,30 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'styles/user-site.css' %}">
     <title>Title</title>
 </head>
 <body>
 <h1>user site</h1>
 <h3>{{user}} está conectado</h3>
+<section id="user-albums">
+    {% for album in albums %}
+    <div id="album-{{album.pk}}" class="album-user-div">
+        <h3>{{album.title}}</h3>
+        <p>{{album.admin.username}}</p>
+        <div>
+            {% for profile in album.profiles.all %}
+            <p>{{profile.user.username}}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% endfor %}
+</section>
+
 <a href='/accounts/logout/'><button>Logout</button></a>
 </body>
 </html>

@@ -1,16 +1,16 @@
 from django.contrib import admin
-from .models import Image, Album, Avatar, Comment, Value
+from .models import Image, Album, Avatar, Comment, Value, Profile
 
 # Register your models here.
 class AlbumAdmin(admin.ModelAdmin):
-    list_display = ['title', 'admin']
+    list_display = ['title']
 
     class Meta:
         model = Album
 
 
 class ImageAdmin(admin.ModelAdmin):
-    list_display = ['title', 'album']
+    list_display = ['title']
 
     class Meta:
         model = Image
@@ -37,9 +37,17 @@ class ValueAdmin(admin.ModelAdmin):
         model = Value
 
 
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ['user']
+
+    class Meta:
+        model = Profile
+
+
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Image, ImageAdmin)
 admin.site.register(Avatar, AvatarAdmin)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Value, ValueAdmin)
+admin.site.register(Profile, ProfileAdmin)
 
