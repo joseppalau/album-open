@@ -13,15 +13,15 @@
 
 <body style="background:black;">
     <div class="login-container">
-        <h2>Accedeix a les teves fotografies</h2>
+        <h2>Login to open your albums</h2>
         <form class="login-form" method="post">
             {% csrf_token %}
             {{form.as_p}}
-            <button type="'submit" class="btn btn-primary">Accedeix</button>
+            <button type="'submit" class="btn btn-primary">Go in</button>
+            <div style="margin-top:10px;">
+                <a href="{% url 'user_register' %}">not user yet?</a>
+            </div>
         </form>
-    </div>
-    <div style="text-align:center">
-        <a href="{% url 'user_register' %}">not user yet?</a>
     </div>
     <img id="imgStudio" src="http://digitalcities.in/wp-content/uploads/2017/07/studio-4.jpg" alt="">
 </body>
