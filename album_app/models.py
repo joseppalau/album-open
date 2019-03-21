@@ -26,7 +26,7 @@ class Album(models.Model):
 
 
 class Image(models.Model):
-    album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='images')
+    album = models.ForeignKey(Album, null=True, on_delete=models.CASCADE, related_name='images')
     width = models.IntegerField(default=0)
     height = models.IntegerField(default=0)
     photo = models.ImageField(null=False, blank=False, width_field='width', height_field='height')
